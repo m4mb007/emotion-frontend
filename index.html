@@ -79,7 +79,8 @@
       try {
         spinner.classList.remove('hidden');
 
-        await fetch('http://localhost:3000/hantar-emosi', {
+        await fetch('emotion-frontend-delta.vercel.app
+/hantar-emosi', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ emosiHariIni })
@@ -99,7 +100,8 @@
     async function dapatkanSenaraiEmosi() {
       spinner.classList.remove('hidden');
       try {
-        const response = await fetch('http://localhost:3000/senarai-emosi');
+        const response = await fetch('emotion-frontend-delta.vercel.app
+/senarai-emosi');
         const data = await response.json();
 
         emosiList.innerHTML = '';
@@ -131,7 +133,8 @@
     if (!confirmDelete) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/hapus-emosi/${id}`, {
+        const response = await fetch(`emotion-frontend-delta.vercel.app
+/hapus-emosi/${id}`, {
             method: 'DELETE'
         });
 
@@ -151,7 +154,8 @@ async function editEmosi(id) {
     if (!newEmosi) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/edit-emosi/${id}`, {
+        const response = await fetch(`emotion-frontend-delta.vercel.app
+/edit-emosi/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ emosiHariIni: newEmosi })
@@ -182,7 +186,8 @@ async function loginUser() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  const response = await fetch('http://localhost:3000/login', {
+  const response = await fetch('emotion-frontend-delta.vercel.app
+/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
@@ -203,7 +208,6 @@ function logoutUser() {
   alert('Anda telah logout!');
   location.reload(); // Refresh page
 }
-
 
 
 
